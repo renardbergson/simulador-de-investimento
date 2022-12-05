@@ -16,29 +16,36 @@
             <h2>O seu simulador de <br> investimentos online</h2>
         </div>
 
-        <form action="salvar.html">
-            <div class="name">
-                <label>Nome</label>
-                <input type="text">
-            </div>
+        <div class="screenOne">
+            <form id="informations" action="salvar.html">
+                <div class="name">
+                    <label>Nome</label>
+                    <input name="name" type="text">
+                </div>
+        
+                <div class="monthlyPayment">
+                    <label>Mensalidade</label>
+                    <input name="monthlyPayment" type="number">
+                </div>
+        
+                <div class="fees">
+                    <label>Taxa de Juros</label>
+                    <input name="fees" type="number">
+                </div>
+        
+                <div class="contributionTime">
+                    <label>Tempo de <br> Contribuição</label>
+                    <input name="contributionTime" type="number">
+                </div>
     
-            <div class="monthlyPayment">
-                <label>Mensalidade</label>
-                <input type="number">
-            </div>
-    
-            <div class="fees">
-                <label>Taxa de Juros</label>
-                <input type="number">
-            </div>
-    
-            <div class="contributionTime">
-                <label>Tempo de <br> Contribuição</label>
-                <input type="number">
-            </div>
+                <button type="submit">Simular</button>
+            </form>
+        </div>
 
-            <button type="submit">Simular</button>
-        </form>
+        <div class="screenTwo">
+            <p>Olá, <span class="userName">Fulano!</span> Economizando R$ <span class="savedValue">20,00</span> por mês, você acumulará R$ <span class="amount">509,65</span> em <span class="years">2</span> anos.</p>
+            <button id="returnBtn">Simular Novamente</button>
+        </div>
     </div>
 </body>
 </html>

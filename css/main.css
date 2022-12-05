@@ -20,7 +20,7 @@ body {
   height: 30em;
   opacity: 0.8;
   border: 1px solid black;
-  box-shadow: 2px 4px 8px black; }
+  box-shadow: 2px 1px 8px black; }
   .container .text {
     height: 20%;
     display: flex;
@@ -46,44 +46,74 @@ body {
       font-weight: lighter;
       margin-top: 0.5em;
       letter-spacing: 3px; }
-  .container form {
+  .container .screenOne {
     height: 80%;
+    padding-top: 3em; }
+    .container .screenOne form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1em; }
+      .container .screenOne form div {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
+        .container .screenOne form div label {
+          font-size: 0.9em; }
+        .container .screenOne form div input {
+          text-align: center;
+          padding: 0.4em 0;
+          outline: none;
+          border: 1px solid black;
+          color: #505050;
+          border-radius: 4px;
+          font-family: 'Lato', sans-serif;
+          font-size: 0.8em;
+          width: 60%;
+          appearance: textfield; }
+          .container .screenOne form div input::-webkit-outer-spin-button, .container .screenOne form div input::-webkit-inner-spin-button {
+            -webkit-appearance: none; }
+          .container .screenOne form div input.invalid {
+            border: 1.2px solid red; }
+      .container .screenOne form .monthlyPayment {
+        margin: 1em 0; }
+      .container .screenOne form .fees,
+      .container .screenOne form .contributionTime {
+        margin-bottom: 1em; }
+      .container .screenOne form button {
+        padding: 0.7em 0;
+        margin-top: 12%;
+        width: 100%;
+        border: none;
+        background-color: #3784c7;
+        color: white;
+        border-radius: 2em;
+        cursor: pointer; }
+  .container .screenTwo {
+    height: 80%;
+    text-align: center;
+    padding-top: 40%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-top: 4em; }
-    .container form div {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center; }
-      .container form div label {
-        font-size: 0.9em; }
-      .container form div input {
-        text-align: center;
-        padding: 0.3em 0;
-        outline: none;
-        border: 1px solid black;
-        color: #505050;
-        border-radius: 4px;
-        font-family: 'Lato', sans-serif;
-        font-size: 0.8em;
-        width: 60%;
-        -moz-appearance: textfield; }
-        .container form div input::-webkit-outer-spin-button, .container form div input::-webkit-inner-spin-button {
-          -webkit-appearance: none; }
-    .container form .monthlyPayment {
-      margin: 1em 0; }
-    .container form .fees,
-    .container form .contributionTime {
-      margin-bottom: 1em; }
-    .container form button {
+    display: none; }
+    .container .screenTwo p {
+      line-height: 20px;
+      text-align: center;
+      letter-spacing: 1px;
+      width: 80%;
+      margin: 0 auto; }
+    .container .screenTwo #returnBtn {
       padding: 0.7em 0;
-      margin-top: 10%;
+      margin-top: 12%;
+      width: 100%;
       border: none;
       background-color: #3784c7;
       color: white;
       border-radius: 2em;
-      cursor: pointer; }
+      cursor: pointer;
+      padding: 0.72em 0;
+      margin-bottom: 0.45em; }
 
 /*# sourceMappingURL=main.css.map */

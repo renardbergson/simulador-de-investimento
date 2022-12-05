@@ -1,0 +1,10 @@
+@mixin buttonStyle {
+    padding: 0.7em 0;
+    margin-top: 12%;
+    width: 100%;
+    border: none;
+    background-color: #3784c7;
+    color: white;
+    border-radius: 2em;
+    cursor: pointer;
+}

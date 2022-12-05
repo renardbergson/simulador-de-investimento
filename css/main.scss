@@ -1,4 +1,5 @@
 @import 'base.scss';
+@import 'mixins.scss';
 
 .container {
     position: absolute;
@@ -12,7 +13,7 @@
     height: 30em;
     opacity: 0.8;
     border: 1px solid black;
-    box-shadow: 2px 4px 8px black;
+    box-shadow: 2px 1px 8px black;
 
     .text {
         //border: 1px solid lime;
@@ -48,64 +49,90 @@
         }
     }
 
-    form {
+    .screenOne {
         //border: 1px solid red;
         height: 80%;
+        padding-top: 3em;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 1em;
+    
+            div {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+    
+                label {
+                    font-size: 0.9em;
+                }
+    
+                input {
+                    text-align: center;
+                    padding: 0.4em 0;
+                    outline: none;
+                    border: 1px solid black;
+                    color: rgb(80, 80, 80);
+                    border-radius: 4px;
+                    font-family: 'Lato', sans-serif;
+                    font-size: 0.8em;
+                    width: 60%;
+                    appearance: textfield;
+    
+                    &:focus {
+                        //color: red; // PODE SER QUE REMOVAMOS!
+                    }
+    
+                    &::-webkit-outer-spin-button,
+                    &::-webkit-inner-spin-button {
+                        -webkit-appearance: none;
+                    }
+
+                    &.invalid {
+                        border: 1.2px solid red;
+                    }
+                }
+            }
+        
+            .monthlyPayment {
+                margin: 1em 0;
+            }
+        
+            .fees,
+            .contributionTime {
+                margin-bottom: 1em;
+            }
+    
+            button {
+                @include buttonStyle;
+            }
+        }
+    }
+
+    .screenTwo {
+        height: 80%;
+        text-align: center;
+        padding-top: 40%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding-top: 4em;
+        display: none;
 
-        div {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            label {
-                font-size: 0.9em;
-            }
-
-            input {
-                text-align: center;
-                padding: 0.3em 0;
-                outline: none;
-                border: 1px solid black;
-                color: rgb(80, 80, 80);
-                border-radius: 4px;
-                font-family: 'Lato', sans-serif;
-                font-size: 0.8em;
-                width: 60%;
-
-                &:focus {
-                    //color: red; // PODE SER QUE REMOVAMOS!
-                }
-
-                -moz-appearance: textfield;
-                &::-webkit-outer-spin-button,
-                &::-webkit-inner-spin-button {
-                    -webkit-appearance: none;
-                }
-            }
-        }
-    
-        .monthlyPayment {
-            margin: 1em 0;
-        }
-    
-        .fees,
-        .contributionTime {
-            margin-bottom: 1em;
+        p {
+            line-height: 20px;
+            text-align: center;
+            letter-spacing: 1px;
+            width: 80%;
+            margin: 0 auto;
         }
 
-        button {
-            padding: 0.7em 0;
-            margin-top: 10%;
-            border: none;
-            background-color: #3784c7;
-            color: white;
-            border-radius: 2em;
-            cursor: pointer;
+        #returnBtn {
+            @include buttonStyle;
+            padding: 0.72em 0;
+            margin-bottom: 0.45em;
         }
     }
 }
