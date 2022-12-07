@@ -75,9 +75,15 @@ body {
           .container .screenOne form div input::-webkit-outer-spin-button, .container .screenOne form div input::-webkit-inner-spin-button {
             -webkit-appearance: none; }
           .container .screenOne form div input.invalid {
-            border: 1.2px solid red; }
+            border: 1.2px solid red;
+            box-shadow: 0 0 2px red; }
       .container .screenOne form .monthlyPayment {
         margin: 1em 0; }
+        .container .screenOne form .monthlyPayment span {
+          position: absolute;
+          top: 33.5%;
+          right: 2%;
+          color: red; }
       .container .screenOne form .fees,
       .container .screenOne form .contributionTime {
         margin-bottom: 1em; }

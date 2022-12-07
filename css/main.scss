@@ -82,10 +82,6 @@
                     width: 60%;
                     appearance: textfield;
     
-                    &:focus {
-                        //color: red; // PODE SER QUE REMOVAMOS!
-                    }
-    
                     &::-webkit-outer-spin-button,
                     &::-webkit-inner-spin-button {
                         -webkit-appearance: none;
@@ -93,12 +89,20 @@
 
                     &.invalid {
                         border: 1.2px solid red;
+                        box-shadow: 0 0 2px red;
                     }
                 }
             }
         
             .monthlyPayment {
                 margin: 1em 0;
+
+                span {
+                    position: absolute;
+                    top: 33.5%;
+                    right: 2%;
+                    color: red;
+                }
             }
         
             .fees,
