@@ -38,7 +38,7 @@ function request() {
         body: JSON.stringify( expression ) 
     }
 
-    fetch('http://api.mathjs.org/v4', configs)
+    fetch('https://api.mathjs.org/v4', configs)
         .then(getData)
         .then(dataConstruct)
         .catch(error)
@@ -62,7 +62,7 @@ function dataConstruct(data) {
 }
 
 function error() {
-    alert('Ops, ocorreu algum erro na requisição ou existem valores inseridos incorretamente!')
+    alert('Ops, ocorreu algum erro na requisição!')
 }
 
 // ************************************************** SCREEN OPERATOR ***************************************************
@@ -102,7 +102,6 @@ function feesFormatter(item) {
     if (item.includes('.') && !item.includes('%')) {
         newFees = item + '%'
     } else if (item.includes(',') && !item.includes('%')) {
-        console.log('tem virgula mas nao tem porcentagem')
         newFees = item.replace(',' , '.') + '%'
     } else if (item.includes(',') && item.includes('%')) {
         newFees = item.replace(',' , '.')
