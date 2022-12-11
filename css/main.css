@@ -2,11 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap"); }
+  @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap");
+}
 
 body {
-  background-color: #57abd4;
-  font-family: 'Lato', sans-serif; }
+  background-color: rgb(87, 171, 212);
+  font-family: "Lato", sans-serif;
+}
 
 .container {
   position: absolute;
@@ -20,106 +22,127 @@ body {
   height: 30em;
   opacity: 0.8;
   border: 1px solid black;
-  box-shadow: 2px 1px 8px black; }
-  .container .text {
-    height: 20%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding-top: 1em; }
-    .container .text h1 {
-      text-align: center;
-      font-size: 2.5em; }
-      .container .text h1::after {
-        content: '';
-        background-image: url(https://www.freeiconspng.com/thumbs/financial-icon-png/financial-icon-png-buy-this-icon-for--0-48-2.png);
-        background-size: cover;
-        background-position: center;
-        width: 0.8em;
-        height: 0.8em;
-        display: inline-block;
-        margin-left: 0.1em;
-        transform: translateY(45%); }
-    .container .text h2 {
-      text-align: center;
-      font-size: 1em;
-      font-weight: lighter;
-      margin-top: 0.5em;
-      letter-spacing: 3px; }
-  .container .screenOne {
-    height: 80%;
-    padding-top: 3em; }
-    .container .screenOne form {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 1em; }
-      .container .screenOne form div {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center; }
-        .container .screenOne form div label {
-          font-size: 0.9em; }
-        .container .screenOne form div input {
-          text-align: center;
-          padding: 0.4em 0;
-          outline: none;
-          border: 1px solid black;
-          color: #505050;
-          border-radius: 4px;
-          font-family: 'Lato', sans-serif;
-          font-size: 0.8em;
-          width: 60%;
-          appearance: textfield; }
-          .container .screenOne form div input::-webkit-outer-spin-button, .container .screenOne form div input::-webkit-inner-spin-button {
-            -webkit-appearance: none; }
-          .container .screenOne form div input.invalid {
-            border: 1.2px solid red;
-            box-shadow: 0 0 2px red; }
-      .container .screenOne form .monthlyPayment {
-        margin: 1em 0; }
-        .container .screenOne form .monthlyPayment span {
-          position: absolute;
-          top: 33.5%;
-          right: 2%;
-          color: red; }
-      .container .screenOne form .fees,
-      .container .screenOne form .contributionTime {
-        margin-bottom: 1em; }
-      .container .screenOne form button {
-        padding: 0.7em 0;
-        margin-top: 12%;
-        width: 100%;
-        border: none;
-        background-color: #3784c7;
-        color: white;
-        border-radius: 2em;
-        cursor: pointer; }
-  .container .screenTwo {
-    height: 80%;
-    text-align: center;
-    padding-top: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    display: none; }
-    .container .screenTwo p {
-      line-height: 20px;
-      text-align: center;
-      letter-spacing: 1px;
-      width: 80%;
-      margin: 0 auto; }
-    .container .screenTwo #returnBtn {
-      padding: 0.7em 0;
-      margin-top: 12%;
-      width: 100%;
-      border: none;
-      background-color: #3784c7;
-      color: white;
-      border-radius: 2em;
-      cursor: pointer;
-      padding: 0.72em 0;
-      margin-bottom: 0.45em; }
-
-/*# sourceMappingURL=main.css.map */
+  box-shadow: 2px 1px 8px black;
+}
+.container .text {
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-top: 1em;
+}
+.container .text h1 {
+  text-align: center;
+  font-size: 2.5em;
+}
+.container .text h1::after {
+  content: "";
+  background-image: url(https://www.freeiconspng.com/thumbs/financial-icon-png/financial-icon-png-buy-this-icon-for--0-48-2.png);
+  background-size: cover;
+  background-position: center;
+  width: 0.8em;
+  height: 0.8em;
+  display: inline-block;
+  margin-left: 0.1em;
+  transform: translateY(45%);
+}
+.container .text h2 {
+  text-align: center;
+  font-size: 1em;
+  font-weight: lighter;
+  margin-top: 0.5em;
+  letter-spacing: 3px;
+}
+.container .screenOne {
+  height: 80%;
+  padding-top: 3em;
+}
+.container .screenOne form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1em;
+}
+.container .screenOne form div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .screenOne form div label {
+  font-size: 0.9em;
+  max-width: 35%;
+}
+.container .screenOne form div input {
+  text-align: center;
+  padding: 0.4em 0;
+  outline: none;
+  border: 1px solid black;
+  color: rgb(80, 80, 80);
+  border-radius: 4px;
+  font-family: "Lato", sans-serif;
+  font-size: 0.8em;
+  width: 60%;
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+.container .screenOne form div input::-webkit-outer-spin-button, .container .screenOne form div input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.container .screenOne form div input.invalid {
+  border: 1.2px solid red;
+  box-shadow: 0 0 2px red;
+}
+.container .screenOne form .monthlyPayment {
+  margin: 1em 0;
+}
+.container .screenOne form .monthlyPayment span {
+  position: absolute;
+  top: 33.5%;
+  right: 2%;
+  color: red;
+}
+.container .screenOne form .fees,
+.container .screenOne form .contributionTime {
+  margin-bottom: 1em;
+}
+.container .screenOne form button {
+  padding: 0.7em 0;
+  margin-top: 12%;
+  width: 100%;
+  border: none;
+  background-color: #3784c7;
+  color: white;
+  border-radius: 2em;
+  cursor: pointer;
+}
+.container .screenTwo {
+  height: 80%;
+  text-align: center;
+  padding-top: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  display: none;
+}
+.container .screenTwo #resultMessage {
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 1px;
+  width: 80%;
+  margin: 0 auto;
+  text-align: justify;
+}
+.container .screenTwo #returnBtn {
+  padding: 0.7em 0;
+  margin-top: 12%;
+  width: 100%;
+  border: none;
+  background-color: #3784c7;
+  color: white;
+  border-radius: 2em;
+  cursor: pointer;
+  padding: 0.72em 0;
+  margin-bottom: 0.1em;
+}/*# sourceMappingURL=main.css.map */

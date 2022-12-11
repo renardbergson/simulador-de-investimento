@@ -24,18 +24,18 @@
                 </div>
         
                 <div class="monthlyPayment">
-                    <label>Mensalidade</label>
-                    <input name="monthlyPayment" type="number">
+                    <label>Investimento Mensal</label>
+                    <input name="monthlyPayment" type="text" step="any" placeholder="Ex: 250 reais">
                 </div>
         
                 <div class="fees">
                     <label>Taxa de Juros</label>
-                    <input name="fees" type="number">
+                    <input name="fees" type="text" step="any" placeholder="Ex: 0,25%">
                 </div>
         
                 <div class="contributionTime">
                     <label>Tempo de <br> Contribuição</label>
-                    <input name="contributionTime" type="number">
+                    <input name="contributionTime" type="text" placeholder="Ex: 96 meses">
                 </div>
     
                 <button type="submit">Simular</button>
@@ -43,7 +43,7 @@
         </div>
 
         <div class="screenTwo">
-            <p>Olá, <span class="userName">Fulano!</span> Economizando R$ <span class="savedValue">20,00</span> por mês, você acumulará R$ <span class="amount">509,65</span> em <span class="years">2</span> anos.</p>
+            <p id="resultMessage"> <!-- text from script --> </p>
             <button id="returnBtn">Simular Novamente</button>
         </div>
     </div>
