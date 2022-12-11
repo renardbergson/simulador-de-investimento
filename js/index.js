@@ -27,8 +27,7 @@ function request() {
     const $time = parseInt($formulary.contributionTime.value)
 
     if (!$fees.includes(',') && !$fees.includes('.') && $fees.charAt(0) === '0') {
-        error()
-        return
+        return $inputs.item(2).classList.add('invalid')
     }
 
     const expression = { expr: `${paymentFormatter($payment)} * (((1 + ${feesFormatter($fees)}) ^ ${$time} - 1) / ${feesFormatter($fees)})` }
