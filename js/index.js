@@ -10,27 +10,27 @@ $formulary.onsubmit = e => {
     $inputs.forEach(input => {
         if (!input.value) {
             isThereAnError = true
-            return input.classList.add('invalid')    
+            return formValidation(input, true)  
         } 
-        input.classList.remove('invalid')
+        return formValidation(input, false)
     })
 
     if (!isThereAnError) {
-        request()
+        request($inputs.item(1).value, $inputs.item(2).value, $inputs.item(3).value)
     }
 }
 
 // ******************************************** API REQUEST AND DATA CONSTRUCT ********************************************
-function request() {
-    const $payment = $formulary.monthlyPayment.value
-    const $fees = $formulary.fees.value
-    const $time = parseInt($formulary.contributionTime.value)
-
-    if (!$fees.includes(',') && !$fees.includes('.') && $fees.charAt(0) === '0') {
-        return $inputs.item(2).classList.add('invalid')
+function request(payment, fees, time) {
+    if (!fees.includes(',') && !fees.includes('.') && fees.charAt(0) === '0') {
+        return formValidation($inputs.item(2), true)
     }
 
-    const expression = { expr: `${paymentFormatter($payment)} * (((1 + ${feesFormatter($fees)}) ^ ${$time} - 1) / ${feesFormatter($fees)})` }
+    if (time.includes('ano') || time.includes('anos')) {
+        return formValidation($inputs.item(3), true)
+    }
+
+    const expression = { expr: `${paymentFormatter(payment)} * (((1 + ${feesFormatter(fees)}) ^ ${parseInt(time)} - 1) / ${feesFormatter(fees)})` }
 
     const configs = {
         method: 'POST',
@@ -54,9 +54,12 @@ function dataConstruct(data) {
     const result = parseFloat(data.result)
     const $resultMessage = document.querySelector('#resultMessage')
 
-    const { name, monthlyPayment, fees, contributionTime } = $formulary
+    const $name = $inputs.item(0).value
+    const $payment = $inputs.item(1).value
+    const $fees = $inputs.item(2).value
+    const $time = $inputs.item(3).value
 
-    $resultMessage.innerHTML = `Olá, ${name.value}! Investindo ${localeStrings(monthlyPayment.value)} todo mês, você acumulará ${localeStrings(result)} em ${contributionTime.value} meses, sob uma taxa de juros de ${fees.value.replace('.' , ',')} mensais.`
+    $resultMessage.innerHTML = `Olá, ${$name}! Investindo ${localeStrings($payment)} todo mês, você acumulará ${localeStrings(result)} em ${$time} meses, sob uma taxa de juros de ${$fees.replace('.' , ',')} mensais.`
 
     screenOperator()
 }
@@ -83,6 +86,13 @@ function screenOperator() {
 }
 
 // ******************************************** DATA VERIFICATION FUNCTIONS ********************************************
+function formValidation(item, response) {
+    if (response === true) {
+        return item.classList.add('invalid')
+    } 
+    return item.classList.remove('invalid')
+}
+
 function paymentFormatter(item) {
     let newPayment
     
