@@ -1,7 +1,9 @@
-const $formulary = document.querySelector('#informations')
-const $inputs = document.querySelectorAll('#informations input')
+import {formValidation, paymentFormatter, feesFormatter, localeStrings} from './dataVerification.js'
+import {screenOperator, $inputs} from './visibilityControl.js'
 
-// ************************************************ FORMULARY CONTROLLER ************************************************
+const $formulary = document.querySelector('#informations')
+
+// FORMULARY CONTROLLER 
 $formulary.onsubmit = e => {
     e.preventDefault()
 
@@ -20,7 +22,7 @@ $formulary.onsubmit = e => {
     }
 }
 
-// ******************************************** API REQUEST AND DATA CONSTRUCT ********************************************
+// API REQUEST AND DATA CONSTRUCT 
 function request(payment, fees, time) {
     if (!fees.includes(',') && !fees.includes('.') && fees.charAt(0) === '0') {
         return formValidation($inputs.item(2), true)
@@ -59,7 +61,7 @@ function dataConstruct(data) {
     const $fees = $inputs.item(2).value
     const $time = $inputs.item(3).value
 
-    $resultMessage.innerHTML = `Olá, ${$name}! Investindo ${localeStrings($payment)} todo mês, você acumulará ${localeStrings(result)} em ${$time} meses, sob uma taxa de juros de ${$fees.replace('.' , ',')} mensais.`
+    $resultMessage.innerHTML = `Olá, ${$name}! Investindo ${localeStrings($payment)} todo mês, você acumulará ${localeStrings(result)} em ${parseInt($time)} meses, sob uma taxa de juros de ${$fees.replace('.' , ',')} mensais.`
 
     screenOperator()
 }
@@ -67,71 +69,3 @@ function dataConstruct(data) {
 function error() {
     alert('Ops, ocorreu algum erro na requisição!')
 }
-
-// ************************************************** SCREEN OPERATOR ***************************************************
-function screenOperator() {
-    const $screenOne = document.querySelector('.screenOne')
-    const $screenTwo = document.querySelector('.screenTwo')
-    
-    getInvisible($screenOne)
-    getVisible($screenTwo, 'flex')
-    
-    const $returnBtn = document.querySelector('#returnBtn')
-    
-    $returnBtn.onclick = () => {
-        getVisible($screenOne)
-        getInvisible($screenTwo)
-        //resetFormulary()
-    }
-}
-
-// ******************************************** DATA VERIFICATION FUNCTIONS ********************************************
-function formValidation(item, response) {
-    if (response === true) {
-        return item.classList.add('invalid')
-    } 
-    return item.classList.remove('invalid')
-}
-
-function paymentFormatter(item) {
-    let newPayment
-    
-    if (item.includes(',')) {
-        const replace = item.replace(',' , '.')
-        newPayment = parseFloat(replace)
-    } else {
-        newPayment = parseInt(item)
-    }
-
-    return newPayment
-}
-
-function feesFormatter(item) {
-    let newFees
-
-    if (item.includes('.') && !item.includes('%')) {
-        newFees = item + '%'
-    } else if (item.includes(',') && !item.includes('%')) {
-        newFees = item.replace(',' , '.') + '%'
-    } else if (item.includes(',') && item.includes('%')) {
-        newFees = item.replace(',' , '.')
-    } else {
-        newFees = item
-    }
-
-    return newFees
-}
-
-function localeStrings(num) {
-    if (typeof num === 'string') {
-        const number = parseFloat(num)
-        return number.toLocaleString("pt-BR", {style:"currency", currency:"BRL"})
-    } else {
-        return num.toLocaleString("pt-BR", {style:"currency", currency:"BRL"})
-    }
-}
-
-// ************************************ ITEM VISIBILITY AND VALUE CONTROL FUNCTIONS ************************************
-const getInvisible = item => item.style.display = 'none'
-const getVisible = (item, display) => {display ? item.style.display = display : item.style.display = 'block'}
-const resetFormulary = () => $inputs.forEach(item => item.value = '')
