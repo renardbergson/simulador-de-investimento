@@ -28,8 +28,7 @@ Meu objetivo ao desenvolver esta aplicação foi praticar requisições a API's 
 ### Preview
 Este é um pequeno preview da aplicação <br> 
 <br>
-
-
+![](https://github.com/renardbergson/simulador-de-investimentos/blob/main/img/gif-preview.gif)
 
 ### Link
   •	[Simulador de Investimentos](https://simulador-de-investimentos-rb.vercel.app) 
