@@ -15,7 +15,7 @@
             <h2>O seu simulador de <br> investimentos online</h2>
         </div>
 
-        <div class="screenOne">
+        <div class="screen">
             <form id="informations" action="salvar.html">
                 <div class="name">
                     <label>Nome</label>
@@ -36,15 +36,14 @@
                     <label>Tempo de <br> Contribuição</label>
                     <input name="contributionTime" type="text" placeholder="Ex: 96 meses">
                 </div>
-    
-                <button type="submit">Simular</button>
             </form>
+
+            <p id="resultMessage"> <!-- text from script --> </p>
         </div>
 
-        <div class="screenTwo">
-            <p id="resultMessage"> <!-- text from script --> </p>
-            <button id="returnBtn">Simular Novamente</button>
-        </div>
+        <button id="submitBtn" type="submit">Simular</button>
+        
+        <button id="returnBtn">Simular Novamente</button>
     </div>
 
     <script type="module" src="js/index.js"></script>

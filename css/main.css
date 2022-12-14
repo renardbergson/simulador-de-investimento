@@ -70,16 +70,18 @@ body {
   border-radius: 10px;
   width: 20em;
   height: 30em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   opacity: 0.8;
   border: 1px solid black;
   box-shadow: 2px 1px 8px black;
 }
 .container .text {
-  height: 20%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding-top: 1em;
+  padding-top: 0.5em;
 }
 .container .text h1 {
   text-align: center;
@@ -103,27 +105,23 @@ body {
   margin-top: 0.5em;
   letter-spacing: 3px;
 }
-.container .screenOne {
-  height: 80%;
-  padding-top: 3em;
-}
-.container .screenOne form {
+.container .screen form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1em;
+  gap: 2em;
 }
-.container .screenOne form div {
+.container .screen form div {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.container .screenOne form div label {
+.container .screen form div label {
   font-size: 0.9em;
   max-width: 35%;
 }
-.container .screenOne form div input {
+.container .screen form div input {
   text-align: center;
   padding: 0.4em 0;
   outline: none;
@@ -136,47 +134,20 @@ body {
      -moz-appearance: textfield;
           appearance: textfield;
 }
-.container .screenOne form div input::-webkit-outer-spin-button, .container .screenOne form div input::-webkit-inner-spin-button {
+.container .screen form div input::-webkit-outer-spin-button, .container .screen form div input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
-.container .screenOne form div input.invalid {
+.container .screen form div input.invalid {
   border: 1.2px solid red;
-  box-shadow: 0 0 2px red;
+  box-shadow: 0 0 4px red;
 }
-.container .screenOne form .monthlyPayment {
-  margin: 1em 0;
-}
-.container .screenOne form .monthlyPayment span {
+.container .screen form .monthlyPayment span {
   position: absolute;
   top: 33.5%;
   right: 2%;
   color: red;
 }
-.container .screenOne form .fees,
-.container .screenOne form .contributionTime {
-  margin-bottom: 1em;
-}
-.container .screenOne form button {
-  padding: 0.7em 0;
-  margin-top: 8%;
-  width: 100%;
-  border: none;
-  background-color: #3784c7;
-  color: white;
-  border-radius: 2em;
-  font-size: 0.8em;
-  cursor: pointer;
-}
-.container .screenTwo {
-  height: 80%;
-  text-align: center;
-  padding-top: 34%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  display: none;
-}
-.container .screenTwo #resultMessage {
+.container .screen #resultMessage {
   line-height: 20px;
   text-align: center;
   letter-spacing: 1px;
@@ -186,18 +157,18 @@ body {
   text-align: justify;
 }
 @media (max-width: 2560px) {
-  .container .screenTwo #resultMessage {
+  .container .screen #resultMessage {
     line-height: 1.4em;
   }
 }
 @media (max-width: 1440px) {
-  .container .screenTwo #resultMessage {
+  .container .screen #resultMessage {
     line-height: 1.3em;
   }
 }
-.container .screenTwo #returnBtn {
+.container #submitBtn {
   padding: 0.7em 0;
-  margin-top: 8%;
+  margin-top: 5%;
   width: 100%;
   border: none;
   background-color: #3784c7;
@@ -205,6 +176,16 @@ body {
   border-radius: 2em;
   font-size: 0.8em;
   cursor: pointer;
+}
+.container #returnBtn {
   padding: 0.7em 0;
-  margin-bottom: 0.62em;
+  margin-top: 5%;
+  width: 100%;
+  border: none;
+  background-color: #3784c7;
+  color: white;
+  border-radius: 2em;
+  font-size: 0.8em;
+  cursor: pointer;
+  display: none;
 }/*# sourceMappingURL=main.css.map */

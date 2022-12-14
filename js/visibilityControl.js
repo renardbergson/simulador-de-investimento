@@ -1,23 +1,33 @@
 const $inputs = document.querySelectorAll('#informations input')
 
 function screenOperator() {
-    const $screenOne = document.querySelector('.screenOne')
-    const $screenTwo = document.querySelector('.screenTwo')
-    
-    getInvisible($screenOne)
-    getVisible($screenTwo, 'flex')
-    
+    const $informations = document.querySelector('#informations')
+    const $submitBtn = document.querySelector('#submitBtn')
+
+    const $resultMessage = document.querySelector('#resultMessage')
     const $returnBtn = document.querySelector('#returnBtn')
     
+    getInvisible($informations, $submitBtn)
+    getVisible($resultMessage, $returnBtn)
+        
     $returnBtn.onclick = () => {
-        getVisible($screenOne)
-        getInvisible($screenTwo)
+        getVisible($informations, $submitBtn)
+        getInvisible($resultMessage, $returnBtn)
         resetFormulary()
     }
 }
 
-const getInvisible = item => item.style.display = 'none'
-const getVisible = (item, display) => {display ? item.style.display = display : item.style.display = 'block'}
+function getInvisible() {
+    const args = [...arguments]
+
+    return args.forEach(item => item.style.display = 'none')
+}
+
+function getVisible(item1, item2) {
+    item1.style.display = 'flex'
+    item2.style.display = 'block'
+}
+
 const resetFormulary = () => $inputs.forEach(item => item.value = '')
 
 export {screenOperator, $inputs}

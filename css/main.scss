@@ -11,17 +11,18 @@
     border-radius: 10px;
     width: 20em;
     height: 30em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     opacity: 0.8;
     border: 1px solid black;
     box-shadow: 2px 1px 8px black;
 
     .text {
-        //border: 1px solid lime;
-        height: 20%;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        padding-top: 1em;
+        padding-top: 0.5em;
 
         h1 {
             text-align: center;
@@ -49,16 +50,12 @@
         }
     }
 
-    .screenOne {
-        //border: 1px solid red;
-        height: 80%;
-        padding-top: 3em;
-
+    .screen {
         form {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            gap: 1em;
+            gap: 2em;
     
             div {
                 width: 100%;
@@ -89,14 +86,12 @@
 
                     &.invalid {
                         border: 1.2px solid red;
-                        box-shadow: 0 0 2px red;
+                        box-shadow: 0 0 4px red;
                     }
                 }
             }
         
             .monthlyPayment {
-                margin: 1em 0;
-
                 span {
                     position: absolute;
                     top: 33.5%;
@@ -104,26 +99,7 @@
                     color: red;
                 }
             }
-        
-            .fees,
-            .contributionTime {
-                margin-bottom: 1em;
-            }
-    
-            button {
-                @include buttonStyle;
-            }
         }
-    }
-
-    .screenTwo {
-        height: 80%;
-        text-align: center;
-        padding-top: 34%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        display: none;
 
         #resultMessage {
             line-height: 20px;
@@ -141,11 +117,16 @@
                 line-height: 1.3em;
             }
         }
+    }
 
-        #returnBtn {
-            @include buttonStyle;
-            padding: 0.70em 0;
-            margin-bottom: 0.62em;
-        }
+    #submitBtn {
+        @include buttonStyle;
+    }
+
+    #returnBtn {
+        @include buttonStyle;
+        //padding: 0.70em 0;
+        //margin-bottom: 1em;
+        display: none;
     }
 }

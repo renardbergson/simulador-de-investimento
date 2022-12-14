@@ -1,12 +1,10 @@
 import {formValidation, paymentFormatter, feesFormatter, localeStrings} from './dataVerification.js'
 import {screenOperator, $inputs} from './visibilityControl.js'
 
-const $formulary = document.querySelector('#informations')
+const $submitBtn = document.querySelector('#submitBtn')
 
 // FORMULARY CONTROLLER 
-$formulary.onsubmit = e => {
-    e.preventDefault()
-
+$submitBtn.onclick = () => {
     let isThereAnError = false
     
     $inputs.forEach(input => {
