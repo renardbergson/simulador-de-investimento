@@ -1,11 +1,44 @@
+@import 'breakpoints.scss';
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap');
 }
 
 body {
     background-color: rgb(87, 171, 212);
-    font-family: 'Lato', sans-serif;
+    font-family: sans-serif;
+    font-size: 16px;
+
+    @include devices (ultra) {
+        font-size: 32px;
+    }
+    @include devices (laptopL) {
+        font-size: 16px;
+    }
+    @include devices (laptop) {
+        font-size: 15px;
+    }
+    @include devices (surfacePro7) {
+        font-size: 20px;
+    }
+    @include devices (iPadAir) {
+        font-size: 18px;
+    }
+    @include devices (tablet) {
+        font-size: 14px;
+    }
+    @include devices (surfaceDuo) {
+        font-size: 12px;
+    }
+    @include devices (mobileM) {
+        font-size: 11px;
+    }
+    @include devices (mobileS) {
+        font-size: 10px;
+    }
+    @include devices (galaxyZFold) {
+        font-size: 9px;
+    }
 }
